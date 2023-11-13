@@ -1,0 +1,59 @@
+
+collections setup :
+    - manufacturer = the car's constructor
+    - model = model of the car
+    - transmission type = Manual or Automatic
+    - fuel = Which energy the car is using
+    - CO2 emissions g/km = The number of grammes producted by the car per km
+
+use cars
+db.hybrid.insertMany([
+    {manufacturer : "Bentley", model : "Bentayga MY21", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 82},
+    {manufacturer : "CHRYSLER JEEP", model : "Renegade", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 52},
+    {manufacturer : "DS", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 27},
+    {manufacturer : "Ferrari", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 160},
+    {manufacturer : "Ford", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 32},
+    {manufacturer : "Hyundai", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 31},
+    {manufacturer : "Kia", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 33},
+    {manufacturer : "Land Rover", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 36},
+    {manufacturer : "Lexus", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 25},
+    {manufacturer : "Mercedes-Benz", model : "DS 4", "transmission type" : "Automatic", fuel : "Electricity/Petrol", "CO2 emissions (g/km)" : 22},
+    ])
+
+db.petrol.insertMany([
+    {manufacturer : "Alfa-Romeo", model "Giulia": , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 184},
+    {manufacturer : "Jaguar", model :"Giulia , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 236},
+    {manufacturer : "Abarth", model : "595", "transmission type" : "Manual", fuel : "Petrol", "CO2 emissions (g/km)" : 171},
+    {manufacturer : "Alpine", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 163},
+    {manufacturer : "Aston Martin Lagonda", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 301},
+    {manufacturer : "Chevrolet", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 277},
+    {manufacturer : "Citroen", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 158}, 
+    {manufacturer : "Dacia ", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 131},
+    {manufacturer : "Fiat", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 171},
+    {manufacturer : "Genesis", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 244}
+])
+
+db.electricity.insertMany([
+    {manufacturer: "DS", model: "DS 3 CROSSBACK", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Jaguar", model: "I-PACE, 20MY", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Lexus", model: "UX 300e", "transmission type": "Electric - Not Applicable", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Nissan", model: "LEAF", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Peugeot", model: "New 2008 SUV", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Renault", model: "New ZOE", "transmission type": "Electric - Not Applicable", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Tesla", model: "Model X", "transmission type": "Electric - Not Applicable", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Tesla", model: "Model S", "transmission type": "Electric - Not Applicable", fuel: "Electricity", "CO2 emissions (g/km)": 0},
+    {manufacturer: "Mercedes-Benz", model: "EQA Model Year 2021.5", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0}
+])
+
+Sort cars by ascending order depending the CO2 emissions
+
+db.hybride.find().sort({ "CO2 emissions (g/km)" : 1 });
+db.petrol.find().sort({ "CO2 emissions (g/km)": 1 });
+db.electricity.find().sort({ "CO2 emissions (g/km)": 1 });
+
+descending order
+
+db.hybride.find().sort({ "CO2 emissions (g/km)": -1 });
+db.petrol.find().sort({ "CO2 emissions (g/km)": -1 });
+db.electricity.find().sort({ "CO2 emissions (g/km)": -1 });
+
