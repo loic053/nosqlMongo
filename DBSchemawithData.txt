@@ -21,8 +21,8 @@ db.hybrid.insertMany([
     ])
 
 db.petrol.insertMany([
-    {manufacturer : "Alfa-Romeo", model "Giulia": , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 184},
-    {manufacturer : "Jaguar", model :"Giulia , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 236},
+    {manufacturer : "Alfa-Romeo", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 184},
+    {manufacturer : "Jaguar", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 236},
     {manufacturer : "Abarth", model : "595", "transmission type" : "Manual", fuel : "Petrol", "CO2 emissions (g/km)" : 171},
     {manufacturer : "Alpine", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 163},
     {manufacturer : "Aston Martin Lagonda", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 301},
@@ -30,8 +30,8 @@ db.petrol.insertMany([
     {manufacturer : "Citroen", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 158}, 
     {manufacturer : "Dacia ", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 131},
     {manufacturer : "Fiat", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 171},
-    {manufacturer : "Genesis", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 244}
-])
+    {manufacturer : "Genesis", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 244},
+    ])
 
 db.electricity.insertMany([
     {manufacturer: "DS", model: "DS 3 CROSSBACK", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
