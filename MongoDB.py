@@ -16,13 +16,28 @@ def display_name():
     elif collection == 3:
         result = electricities.find()
     else:
+        print("enter a valid collection")
         return
     for document in result:
         print(document)
     
-def case2():
-    print("C'est le cas 2")
-    
+def add_an_element():
+    collection = int(input("which collection do you want to add an item ? : 1 for hybrid \n\t2 for petrol \n\t3 for electricity : "))
+    if collection != 1 and collection != 2 and collection != 3:
+        print("enter a valid collection")
+        return
+    manufacturer = str(input("manufacturer of the car : "))
+    model = str(input("model of the car : "))
+    transmission_type = str(input("transmission type of the car : "))
+    fuel = str(input("fuel of the car : "))
+    CO2_emissions = str(input("CO2 emissions (g/km) of the car : "))
+    if collection == 1:
+        database.hybrid.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+    elif collection == 2:
+        database.petrol.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+    elif collection == 3:
+        database.electricity.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+
 def case3():
     exit()
 
