@@ -16,21 +16,21 @@ db.carsType.insertMany([
     {ID : 6, manufacturer : "Abarth", model : "595", "transmission type" : "Manual", fuel : "Petrol", "CO2 emissions (g/km)" : 171},
     {ID : 7, manufacturer : "Alpine", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 163},
     {ID : 8, manufacturer: "DS", model: "DS 3 CROSSBACK", "transmission type": "Automatic", fuel: "Electricity", "CO2 emissions (g/km)": 0},
-    {ID : 9, manufacturer : "Genesis", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 244}
-    {ID : 10, manufacturer : "Jaguar", model :"Giulia" , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 236},
+    {ID : 9, manufacturer : "Genesis", model : "Giulia", "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 244},
+    {ID : 10, manufacturer : "Jaguar", model :"Giulia" , "transmission type" : "Automatic", fuel : "Petrol", "CO2 emissions (g/km)" : 236}
     ])
 
 db.countries.insertMany([
     { Country_ID: 1, Name: 'USA', Population: 331002651 },
     { Country_ID: 2, Name: 'China', Population: 1444216107 },
-    { Country_ID: 3, Name: 'France', Population: 65273511 }
+    { Country_ID: 3, Name: 'France', Population: 65273511 },
     { Country_ID: 4, Name: 'Brazil', Population: 212559417 },
     { Country_ID: 5, Name: 'Russia', Population: 145934462 },
     { Country_ID: 6, Name: 'Mexico', Population: 128932753 },
     { Country_ID: 7, Name: 'Indonesia', Population: 273523615 },
     { Country_ID: 8, Name: 'Pakistan', Population: 220892331 },
     { Country_ID: 9, Name: 'Nigeria', Population: 206139587 },
-    { Country_ID: 10, Name: 'Bangladesh', Population: 164689383 },
+    { Country_ID: 10, Name: 'Bangladesh', Population: 164689383}
 ])
 
 
@@ -44,8 +44,8 @@ db.country_emissions.insertMany([
     { year: 2020, Country_ID: 7, Car_ID: 7, Quantity: 35000 },
     { year: 2020, Country_ID: 8, Car_ID: 8, Quantity: 25000 },
     { year: 2020, Country_ID: 9, Car_ID: 9, Quantity: 30000 },
-    { year: 2020, Country_ID: 10, Car_ID: 10, Quantity: 28000 },
-]);
+    { year: 2020, Country_ID: 10, Car_ID: 10, Quantity: 28000 }
+])
 
 
 Sort cars by ascending order depending the CO2 emissions
