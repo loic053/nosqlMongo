@@ -8,62 +8,62 @@ collections setup :
 
 use cars
 db.carsType.insertMany([
-    { ID: 1, manufacturer: "Hyundai", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 31 },
-    { ID: 2, manufacturer: "Kia", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 33 },
-    { ID: 3, manufacturer: "Mercedes", model: "SLK 55 class amg", "transmission type": "Automatic", fuel: ["Electricity"], "CO2 emissions (g/km)": 0 },
-    { ID: 4, manufacturer: "Lexus", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 25 },
-    { ID: 5, manufacturer: "Mercedes-Benz", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 22 },
-    { ID: 6, manufacturer: "Abarth", model: "595", "transmission type": "Manual", fuel: ["Petrol"], "CO2 emissions (g/km)": 171 },
-    { ID: 7, manufacturer: "Alpine", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 163 },
-    { ID: 8, manufacturer: "DS", model: "DS 3 CROSSBACK", "transmission type": "Automatic", fuel: ["Electricity"], "CO2 emissions (g/km)": 0 },
-    { ID: 9, manufacturer: "Genesis", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 244 },
-    { ID: 10, manufacturer: "Jaguar", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 236 }
+    {ID: 1, manufacturer: "Hyundai", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 31},
+    {ID: 2, manufacturer: "Kia", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 33},
+    {ID: 3, manufacturer: "Mercedes", model: "SLK 55 class amg", "transmission type": "Automatic", fuel: ["Electricity"], "CO2 emissions (g/km)": 0},
+    {ID: 4, manufacturer: "Lexus", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 25},
+    {ID: 5, manufacturer: "Mercedes-Benz", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 22},
+    {ID: 6, manufacturer: "Abarth", model: "595", "transmission type": "Manual", fuel: ["Petrol"], "CO2 emissions (g/km)": 171},
+    {ID: 7, manufacturer: "Alpine", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 163},
+    {ID: 8, manufacturer: "DS", model: "DS 3 CROSSBACK", "transmission type": "Automatic", fuel: ["Electricity"], "CO2 emissions (g/km)": 0},
+    {ID: 9, manufacturer: "Genesis", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 244},
+    {ID: 10, manufacturer: "Jaguar", model: "Giulia", "transmission type": "Automatic", fuel: ["Petrol"], "CO2 emissions (g/km)": 236}
 ]);
 
 
 db.countries.insertMany([
-    { Country_ID: 1, Name: 'USA', Population: 331002651 },
-    { Country_ID: 2, Name: 'China', Population: 1444216107 },
-    { Country_ID: 3, Name: 'France', Population: 65273511 },
-    { Country_ID: 4, Name: 'Brazil', Population: 212559417 },
-    { Country_ID: 5, Name: 'Russia', Population: 145934462 },
-    { Country_ID: 6, Name: 'Mexico', Population: 128932753 },
-    { Country_ID: 7, Name: 'Indonesia', Population: 273523615 },
-    { Country_ID: 8, Name: 'Pakistan', Population: 220892331 },
-    { Country_ID: 9, Name: 'Nigeria', Population: 206139587 },
-    { Country_ID: 10, Name: 'Bangladesh', Population: 164689383 }
+    {Country_ID: 1, Name: 'USA', Population: 331002651},
+    {Country_ID: 2, Name: 'China', Population: 1444216107},
+    {Country_ID: 3, Name: 'France', Population: 65273511},
+    {Country_ID: 4, Name: 'Brazil', Population: 212559417},
+    {Country_ID: 5, Name: 'Russia', Population: 145934462},
+    {Country_ID: 6, Name: 'Mexico', Population: 128932753},
+    {Country_ID: 7, Name: 'Indonesia', Population: 273523615},
+    {Country_ID: 8, Name: 'Pakistan', Population: 220892331},
+    {Country_ID: 9, Name: 'Nigeria', Population: 206139587},
+    {Country_ID: 10, Name: 'Bangladesh', Population: 164689383}
 ]);
 
 db.country_emissions.insertMany([
-    { year: 2020, Country_ID: 1, Car_ID: 1, Quantity: 50000 },
-    { year: 2020, Country_ID: 2, Car_ID: 2, Quantity: 60000 },
-    { year: 2020, Country_ID: 3, Car_ID: 3, Quantity: 40000 },
-    { year: 2020, Country_ID: 4, Car_ID: 4, Quantity: 30000 },
-    { year: 2020, Country_ID: 5, Car_ID: 5, Quantity: 45000 },
-    { year: 2020, Country_ID: 6, Car_ID: 6, Quantity: 20000 },
-    { year: 2020, Country_ID: 7, Car_ID: 7, Quantity: 35000 },
-    { year: 2020, Country_ID: 8, Car_ID: 8, Quantity: 25000 },
-    { year: 2020, Country_ID: 9, Car_ID: 9, Quantity: 30000 },
-    { year: 2020, Country_ID: 10, Car_ID: 10, Quantity: 28000 }
+    {year: 2020, Country_ID: 1, Car_ID: 1, Quantity: 50000},
+    {year: 2020, Country_ID: 2, Car_ID: 2, Quantity: 60000},
+    {year: 2020, Country_ID: 3, Car_ID: 3, Quantity: 40000},
+    {year: 2020, Country_ID: 4, Car_ID: 4, Quantity: 30000},
+    {year: 2020, Country_ID: 5, Car_ID: 5, Quantity: 45000},
+    {year: 2020, Country_ID: 6, Car_ID: 6, Quantity: 20000},
+    {year: 2020, Country_ID: 7, Car_ID: 7, Quantity: 35000},
+    {year: 2020, Country_ID: 8, Car_ID: 8, Quantity: 25000},
+    {year: 2020, Country_ID: 9, Car_ID: 9, Quantity: 30000},
+    {year: 2020, Country_ID: 10, Car_ID: 10, Quantity: 28000}
 ]);
 
 
 
 Sort cars by ascending order depending the CO2 emissions
 
-db.carsType.find().sort({ "CO2 emissions (g/km)" : 1 });
+db.carsType.find().sort({"CO2 emissions (g/km)" : 1});
 
 descending order
 
-db.carsType.find().sort({ "CO2 emissions (g/km)": -1 });
+db.carsType.find().sort({"CO2 emissions (g/km)": -1});
 
 find countries with a population greater than 200 million:
 
-db.countries.find({ Population: { $gt: 200000000 } });
+db.countries.find({Population: {$gt: 200000000}});
 
 command to find cars manufactured by Mercedes with automatic transmission
 
-db.carsType.find({ manufacturer: "Mercedes", "transmission type": "Automatic" });
+db.carsType.find({manufacturer: "Mercedes", "transmission type": "Automatic"});
 
 command to calculate the average of co2 emission per country
 
@@ -71,30 +71,30 @@ db.country_emissions.aggregate([
   {
     $group: {
       _id: "$Country_ID",
-      averageCO2: { $avg: "$Quantity" }
-    }
-  },
+      averageCO2: {$avg: "$Quantity"}
+}
+},
   {
     $lookup: {
       from: "countries",
       localField: "_id",
       foreignField: "Country_ID",
       as: "countryInfo"
-    }
-  },
+}
+},
   {
     $project: {
       _id: 0,
       countryName: "$countryInfo.Name",
       averageCO2: 1
-    }
-  }
+}
+}
 ]);
 
 command to found all cars using Electricity and Petrol
 
 db.carsType.find({
-  fuel: { $all: ["Electricity", "Petrol"] }
+  fuel: {$all: ["Electricity", "Petrol"]}
 });
 
 command to count the number of car by fuel
@@ -102,13 +102,13 @@ command to count the number of car by fuel
 db.carsType.aggregate([
   {
     $unwind: "$fuel"
-  },
+},
   {
     $group: {
       _id: "$fuel",
-      count: { $sum: 1 }
-    }
-  }
+      count: {$sum: 1}
+}
+}
 ]);
 
 
@@ -121,30 +121,30 @@ db.carsType.aggregate([
       localField: "ID",
       foreignField: "Car_ID",
       as: "carEmissions"
-    }
-  },
+}
+},
   {
     $unwind: "$carEmissions"
-  },
+},
   {
     $match: {
-      "carEmissions.Quantity": { $lt: 50 }
-    }
-  }
+      "carEmissions.Quantity": {$lt: 50}
+}
+}
 ]);
 
 command to find the average CO2 emissions per car for each manufacturer:
 
 db.country_emissions.aggregate([
-    { $group: { _id: "$Car_ID", avgEmissions: { $avg: "$Quantity" } } },
-    { $lookup: { from: "carsType", localField: "_id", foreignField: "ID", as: "carInfo" } },
-    { $project: { manufacturer: "$carInfo.manufacturer", avgEmissions: 1, _id: 0 } }
+    {$group: {_id: "$Car_ID", avgEmissions: {$avg: "$Quantity"}}},
+    {$lookup: {from: "carsType", localField: "_id", foreignField: "ID", as: "carInfo"}},
+    {$project: {manufacturer: "$carInfo.manufacturer", avgEmissions: 1, _id: 0}}
 ]);
 
 delete a specific car by its ID (here ID 4)
 
-db.carsType.deleteOne({ ID: 4 });
+db.carsType.deleteOne({ID: 4});
 
 delete all cars with CO2 emissions greater than 30 g/km
 
-db.carsType.deleteMany({ "CO2 emissions (g/km)": { $gt: 30 } });
+db.carsType.deleteMany({"CO2 emissions (g/km)": {$gt: 30}});
