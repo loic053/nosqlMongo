@@ -45,9 +45,12 @@ def add_an_element():
 def update_fields(collection, identifier):
     new_data = {}
     for field in ["manufacturer", "model", "transmission type", "fuel", "CO2 emissions (g/km)"]:
-        new_data[field] = str(input(f"New {field}: "))
+        if field == "fuel":
+            new_data[field] = input("New fuel (comma-separated values): ").split(',')
+        else:
+            new_data[field] = str(input(f"New {field}: "))
     if collection == 1:
-        database.carsType.update_one({"manufacturer": identifier}, {"$set": new_data})
+        database.carsType.update_one({"ID": identifier}, {"$set": new_data})
     elif collection == 2:
         database.countries.update_one({"Country_ID": identifier}, {"$set": new_data})
     elif collection == 3:
@@ -59,11 +62,11 @@ def update_an_element():
         print("Enter a valid collection")
         return
     if collection == 1:
-        manufacturer = str(input("Manufacturer of the car to update: "))
-        if database.carsType.find_one({"manufacturer": manufacturer}):
-            update_fields(collection, manufacturer)
+        manufacturer = str(input("ID of the car to update: "))
+        if database.carsType.find_one({"ID": _id}):
+            update_fields(collection, _id)
         else:
-            print(f"The car with manufacturer '{manufacturer}' does not exist in the carsType collection.")
+            print(f"The car with ID '{_id}' does not exist in the carsType collection.")
     elif collection == 2:
         country_id = int(input("Country_ID of the country to update: "))
         if database.countries.find_one({"Country_ID": country_id}):
