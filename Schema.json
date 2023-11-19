@@ -1,0 +1,25 @@
+{
+    "carsType": {
+      "_id": "objectId",
+      "ID": "_id",
+      "manufacturer": "string",
+      "model": "string",
+      "transmission_type": "string",
+      "fuel": "array",
+      "CO2_emissions_g_km": "number"
+    },
+    "countries": {
+      "_id": "objectId",
+      "Country_ID": "_id",
+      "Name": "string",
+      "Population": "number"
+    },
+    "country_emissions": {
+      "_id": "objectId",
+      "year": "number",
+      "Country_ID": "_id",
+      "Car_ID": "_id",
+      "Quantity": "number"
+    }
+  }
+  
