@@ -57,6 +57,14 @@ descending order
 
 db.carsType.find().sort({ "CO2 emissions (g/km)": -1 });
 
+find countries with a population greater than 200 million:
+
+db.countries.find({ Population: { $gt: 200000000 } });
+
+command to find cars manufactured by Mercedes with automatic transmission
+
+db.carsType.find({ manufacturer: "Mercedes", "transmission type": "Automatic" });
+
 command to calculate the average of co2 emission per country
 
 db.country_emissions.aggregate([
@@ -125,6 +133,18 @@ db.carsType.aggregate([
   }
 ]);
 
+command to find the average CO2 emissions per car for each manufacturer:
 
+db.country_emissions.aggregate([
+    { $group: { _id: "$Car_ID", avgEmissions: { $avg: "$Quantity" } } },
+    { $lookup: { from: "carsType", localField: "_id", foreignField: "ID", as: "carInfo" } },
+    { $project: { manufacturer: "$carInfo.manufacturer", avgEmissions: 1, _id: 0 } }
+]);
 
+delete a specific car by its ID (here ID 4)
 
+db.carsType.deleteOne({ ID: 4 });
+
+delete all cars with CO2 emissions greater than 30 g/km
+
+db.carsType.deleteMany({ "CO2 emissions (g/km)": { $gt: 30 } });
