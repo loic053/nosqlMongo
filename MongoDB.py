@@ -3,18 +3,14 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 database = client['cars']
 
-hybrids = database.hybrid
-petrols = database.petrol
-electricities = database.electricity
-
 def display_name():
-    collection = int(input("which collection do you want to see : 1 for hybrid \n\t2 for petrol \n\t3 for electricity : "))
+    collection = int(input("which collection do you want to see : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
     if collection == 1:
-        result = hybrids.find()
+        result = database.carsType.find()
     elif collection == 2:
-        result = petrols.find()
+        result = database.countries.find()
     elif collection == 3:
-        result = electricities.find()
+        result = database.country_emissions.find()
     else:
         print("enter a valid collection")
         return
@@ -22,23 +18,53 @@ def display_name():
         print(document)
     
 def add_an_element():
-    collection = int(input("which collection do you want to add an item ? : 1 for hybrid \n\t2 for petrol \n\t3 for electricity : "))
+    collection = int(input("which collection do you want to add an item ? : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
     if collection != 1 and collection != 2 and collection != 3:
         print("enter a valid collection")
         return
-    manufacturer = str(input("manufacturer of the car : "))
-    model = str(input("model of the car : "))
-    transmission_type = str(input("transmission type of the car : "))
-    fuel = str(input("fuel of the car : "))
-    CO2_emissions = str(input("CO2 emissions (g/km) of the car : "))
     if collection == 1:
-        database.hybrid.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+        manufacturer = str(input("manufacturer of the car : "))
+        model = str(input("model of the car : "))
+        transmission_type = str(input("transmission type of the car : "))
+        fuel = str(input("fuel of the car : "))
+        CO2_emissions = str(input("CO2 emissions (g/km) of the car : "))
+        id = len(database.carsType.find()) + 1
+        database.carsType.insert_one({"ID": id, "manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type.split(), "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
     elif collection == 2:
-        database.petrol.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+        name = str(input("Which country do you want to add : "))
+        population = int(input("What is the population of the country : "))
+        id = len(database.countries.find()) + 1
+        database.countries.insert_one({"Country_ID": id, "Name" : name, "Population" : population})
     elif collection == 3:
-        database.electricity.insert_one({"manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+        year = int(input("Which year's emissions do you want to add : "))
+        country_id = int(input("What is the country id related to : "))
+        car_id = int(input("What is the car id related to : "))
+        emissions = float(input("What is the quantity of emmissionss : "))
+        database.country_emissions.insert_one({year: year, Country_ID: country_id, Car_ID: car_id, emissions: 50000})
 
 def case3():
+    return
+
+def case5():
+    return
+
+
+def delete_an_elem():
+    collection = int(input("which collection do you want to delete an element from : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
+    if collection == 1:
+        elem = int(input("What is the id of the cars that you want to delete : "))
+        database.carsType.delete_one({"ID": elem})
+    elif collection == 2:
+        elem = int(input("What is the id of the country that you want to delete : "))
+        database.countries.delete_one({"ID": elem})
+    elif collection == 3:
+        elem = int(input("What is the id of the Country_ID that you want to delete from emmissions collection : "))
+        database.country_emissions.delete_one({"Country_ID": elem})
+    else:
+        print("enter a valid collection")
+        return
+
+def exit_system():
     exit()
 
 def default():
@@ -48,7 +74,10 @@ def switch_case(argument):
     switch_dict = {
         1: display_name,
         2: add_an_element,
-        3: case3
+        3: case3,
+        4: delete_an_elem,
+        5: case5,
+        6: exit_system
     }
     switch_dict.get(argument, default)()
 
