@@ -1,11 +1,3 @@
-
-collections setup :
-    - manufacturer = the car's constructor
-    - model = model of the car
-    - transmission type = Manual or Automatic
-    - fuel = Array repertorizing which energy the car is using
-    - CO2 emissions g/km = The number of grammes producted by the car per km
-
 use cars
 db.carsType.insertMany([
     {ID: 1, manufacturer: "Hyundai", model: "DS 4", "transmission type": "Automatic", fuel: ["Electricity", "Petrol"], "CO2 emissions (g/km)": 31},
