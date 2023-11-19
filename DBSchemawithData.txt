@@ -104,6 +104,27 @@ db.carsType.aggregate([
 ]);
 
 
+command to get all cars with co2 emissions < 50
+
+db.carsType.aggregate([
+  {
+    $lookup: {
+      from: "country_emissions",
+      localField: "ID",
+      foreignField: "Car_ID",
+      as: "carEmissions"
+    }
+  },
+  {
+    $unwind: "$carEmissions"
+  },
+  {
+    $match: {
+      "carEmissions.Quantity": { $lt: 50 }
+    }
+  }
+]);
+
 
 
 
