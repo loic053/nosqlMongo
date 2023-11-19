@@ -28,12 +28,12 @@ def add_an_element():
         transmission_type = str(input("transmission type of the car : "))
         fuel = str(input("fuel of the car : "))
         CO2_emissions = str(input("CO2 emissions (g/km) of the car : "))
-        id = len(database.carsType.find()) + 1
-        database.carsType.insert_one({"ID": id, "manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type.split(), "fuel" : fuel, "CO2 emissions (g/km)" : CO2_emissions})
+        id = len(list(database.carsType.find())) + 1
+        database.carsType.insert_one({"ID": id, "manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel.split(), "CO2 emissions (g/km)" : CO2_emissions})
     elif collection == 2:
         name = str(input("Which country do you want to add : "))
         population = int(input("What is the population of the country : "))
-        id = len(database.countries.find()) + 1
+        id = len(list(database.countries.find())) + 1
         database.countries.insert_one({"Country_ID": id, "Name" : name, "Population" : population})
     elif collection == 3:
         year = int(input("Which year's emissions do you want to add : "))
@@ -116,7 +116,7 @@ def delete_an_elem():
         database.carsType.delete_one({"ID": elem})
     elif collection == 2:
         elem = int(input("What is the id of the country that you want to delete : "))
-        database.countries.delete_one({"ID": elem})
+        database.countries.delete_one({"Country_ID": elem})
     elif collection == 3:
         elem = int(input("What is the id of the Country_ID that you want to delete from emmissions collection : "))
         database.country_emissions.delete_one({"Country_ID": elem})
