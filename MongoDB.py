@@ -79,11 +79,23 @@ def update_an_element():
 
 def find_item_by_text():
     search_text = input("Enter text to search for in stock items: ")
-    result = database.carsType.find({"$or": [{"manufacturer": {"$regex": search_text, "$options": "i"}},
-                                    {"model": {"$regex": search_text, "$options": "i"}},
-                                    {"transmission type": {"$regex": search_text, "$options": "i"}},
-                                    {"fuel": {"$regex": search_text, "$options": "i"}},
-                                    {"CO2 emissions (g/km)": {"$regex": search_text, "$options": "i"}}]})
+    result_carsType = database.carsType.find({"$or": [
+        {"manufacturer": {"$regex": search_text, "$options": "i"}},
+        {"model": {"$regex": search_text, "$options": "i"}},
+        {"transmission_type": {"$regex": search_text, "$options": "i"}},
+        {"fuel": {"$regex": search_text, "$options": "i"}},
+        {"CO2_emissions_g_km": {"$regex": search_text, "$options": "i"}}
+    ]})
+    result_countries = database.countries.find({"$or": [
+        {"Name": {"$regex": search_text, "$options": "i"}},
+        {"Population": {"$regex": search_text, "$options": "i"}}
+    ]})
+    result_country_emissions = database.country_emissions.find({"$or": [
+        {"year": {"$regex": search_text, "$options": "i"}},
+        {"Country_ID": {"$regex": search_text, "$options": "i"}},
+        {"Car_ID": {"$regex": search_text, "$options": "i"}},
+        {"Quantity": {"$regex": search_text, "$options": "i"}}
+    ]})
     print(f"Search Results for '{search_text}':")
     for document in result:
         print(document)
@@ -100,7 +112,7 @@ def delete_an_elem():
         elem = int(input("What is the id of the Country_ID that you want to delete from emmissions collection : "))
         database.country_emissions.delete_one({"Country_ID": elem})
     else:
-        print("enter a valid collection")
+        print("Enter a valid collection")
         return
 
 def exit_system():
@@ -125,4 +137,4 @@ while True:
         a = int(input("Choose an option 1 Display a collection 2 Add a new item to a collection 3 Update an item of a collection 4 Delete an item from a colleciton 5 Find an item 6 Exit : "))
         switch_case(a)
     except ValueError:
-        print("Veuillez entrer un nombre entier.")
+        print("Enter an integer")
