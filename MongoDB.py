@@ -27,7 +27,7 @@ def add_an_element():
         model = str(input("model of the car : "))
         transmission_type = str(input("transmission type of the car : "))
         fuel = str(input("fuel of the car : "))
-        CO2_emissions = str(input("CO2 emissions (g/km) of the car : "))
+        CO2_emissions = int(input("CO2 emissions (g/km) of the car : "))
         id = len(list(database.carsType.find())) + 1
         database.carsType.insert_one({"ID": id, "manufacturer" : manufacturer, "model" : model, "transmission type" : transmission_type, "fuel" : fuel.split(), "CO2 emissions (g/km)" : CO2_emissions})
     elif collection == 2:
