@@ -4,7 +4,7 @@ client = MongoClient('localhost', 27017)
 database = client['cars']
 
 def display_name():
-    collection = int(input("which collection do you want to see : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
+    collection = int(input("which collection do you want to see : 1 for the cars 2 for the countries 3 for the country emissions : "))
     if collection == 1:
         result = database.carsType.find()
     elif collection == 2:
@@ -18,7 +18,7 @@ def display_name():
         print(document)
     
 def add_an_element():
-    collection = int(input("which collection do you want to add an item ? : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
+    collection = int(input("which collection do you want to add an item ? : 1 for the cars 2 for the countries 3 for the country emissions : "))
     if collection != 1 and collection != 2 and collection != 3:
         print("enter a valid collection")
         return
@@ -50,7 +50,7 @@ def case5():
 
 
 def delete_an_elem():
-    collection = int(input("which collection do you want to delete an element from : 1 for the cars \n\t2 for the countries \n\t3 for the country emissions : "))
+    collection = int(input("which collection do you want to delete an element from : 1 for the cars 2 for the countries 3 for the country emissions : "))
     if collection == 1:
         elem = int(input("What is the id of the cars that you want to delete : "))
         database.carsType.delete_one({"ID": elem})
@@ -68,7 +68,7 @@ def exit_system():
     exit()
 
 def default():
-    print("C'est le cas par défaut")
+    print("Enter a valid option")
 
 def switch_case(argument):
     switch_dict = {
@@ -83,7 +83,7 @@ def switch_case(argument):
 
 while True:
     try:
-        a = int(input("Entrez une valeur (1, 2 ou 3) : "))
+        a = int(input("Choose an option 1 Display a collection 2 Add a new item to a collection 3 Update an item of a collection 4 Delete an item from a colleciton 5 Find an item 6 Exit : "))
         switch_case(a)
     except ValueError:
         print("Veuillez entrer un nombre entier.")
