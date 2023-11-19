@@ -115,22 +115,11 @@ db.carsType.aggregate([
 command to get all cars with co2 emissions < 50
 
 db.carsType.aggregate([
-  {
-    $lookup: {
-      from: "country_emissions",
-      localField: "ID",
-      foreignField: "Car_ID",
-      as: "carEmissions"
-}
-},
-  {
-    $unwind: "$carEmissions"
-},
-  {
-    $match: {
-      "carEmissions.Quantity": {$lt: 50}
-}
-}
+    {
+        $match: {
+            "CO2 emissions (g/km)": { $lt: 50 }
+        }
+    }
 ]);
 
 command to find the average CO2 emissions per car for each manufacturer:
