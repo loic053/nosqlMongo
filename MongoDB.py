@@ -46,7 +46,7 @@ def update_fields(collection, identifier):
     new_data = {}
     for field in ["manufacturer", "model", "transmission type", "fuel", "CO2 emissions (g/km)"]:
         if field == "fuel":
-            new_data[field] = input("New fuel (comma-separated values): ").split(',')
+            new_data[field] = input("New fuel (comma-separated values): ").split(' ')
         else:
             new_data[field] = str(input(f"New {field}: "))
     if collection == 1:
