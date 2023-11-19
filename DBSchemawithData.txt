@@ -61,6 +61,20 @@ find countries with a population greater than 200 million:
 
 db.countries.find({Population: {$gt: 200000000}});
 
+Sort country by ascending and descending population
+
+db.countries.aggregate([
+  {
+    $sort: { Population: 1 }
+  }
+]);
+
+db.countries.aggregate([
+  {
+    $sort: { Population: -1 }
+  }
+]);
+
 command to find cars manufactured by Mercedes with automatic transmission
 
 db.carsType.find({manufacturer: "Mercedes", "transmission type": "Automatic"});
