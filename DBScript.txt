@@ -65,13 +65,13 @@ Sort country by ascending and descending population
 
 db.countries.aggregate([
   {
-    $sort: { Population: 1 }
+    $sort: {Population: 1}
   }
 ]);
 
 db.countries.aggregate([
   {
-    $sort: { Population: -1 }
+    $sort: {Population: -1}
   }
 ]);
 
@@ -125,13 +125,12 @@ db.carsType.aggregate([
 }
 ]);
 
-
 command to get all cars with co2 emissions < 50
 
 db.carsType.aggregate([
     {
         $match: {
-            "CO2 emissions (g/km)": { $lt: 50 }
+            "CO2 emissions (g/km)": {$lt: 50 }
         }
     }
 ]);
