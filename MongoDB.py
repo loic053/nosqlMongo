@@ -96,8 +96,14 @@ def find_item_by_text():
         {"Car_ID": {"$regex": search_text, "$options": "i"}},
         {"Quantity": {"$regex": search_text, "$options": "i"}}
     ]})
-    print(f"Search Results for '{search_text}':")
-    for document in result:
+    print(f"Search Results for '{search_text}' in carsType:")
+    for document in result_carsType:
+        print(document)
+    print(f"Search Results for '{search_text}' in countries:")
+    for document in result_countries:
+        print(document)
+    print(f"Search Results for '{search_text}' in country_emissions:")
+    for document in result_country_emissions:
         print(document)
 
 def delete_an_elem():
